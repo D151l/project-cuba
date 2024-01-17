@@ -8,6 +8,8 @@ import (
 	"syscall"
 )
 
+var session *discordgo.Session = nil
+
 func main() {
 	log.SetPrefix("discord-bot: ")
 	log.Println("Starting bot...")
@@ -15,7 +17,10 @@ func main() {
 	token := os.Getenv("token")
 
 	log.Println("Creating Discord session...")
-	session, err := discordgo.New("Bot " + token)
+
+	newSession, err := discordgo.New("Bot " + token)
+	session = newSession
+
 	if err != nil {
 		log.Fatal("Error creating Discord session: ", err)
 		return
