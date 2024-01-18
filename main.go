@@ -48,7 +48,6 @@ func main() {
 		}
 	}(session)
 
-	testCommand()
 	setStatus()
 	setupMessageCommand()
 
