@@ -63,4 +63,17 @@ func messageCommandHandler(s *discordgo.Session, i *discordgo.InteractionCreate)
 
 	sendDemoEmbed(channel)
 	sendDemoListedEmbed(channel)
+
+	currentEmbedsSetup[i.Member.User.ID] = EmbedSetup{
+		channel:     i.ChannelID,
+		embedType:   0,
+		title:       "",
+		colorRed:    -1,
+		colorGreen:  -1,
+		colorBlue:   -1,
+		description: "",
+		list:        nil,
+		footer:      "",
+		preview:     false,
+	}
 }
