@@ -18,6 +18,7 @@ The discord bot uses the following environment variables:
 | `statusType` | The type of the discord bot status. See [Status Types](#status-types) |
 | `statusContent` | The content of the status          |
 | `streamingURL` | The URL of the stream when the status type is `STREAMING` |
+| `guildID` | The ID of the guild where the bot should be active |
 
 ### Status Types
 - `PLAYING`

@@ -10,6 +10,8 @@ import (
 
 var session *discordgo.Session = nil
 
+var guildID string = os.Getenv("guildID")
+
 func main() {
 	log.SetPrefix("discord-bot: ")
 	log.Println("Starting bot...")
@@ -48,6 +50,7 @@ func main() {
 
 	testCommand()
 	setStatus()
+	setupMessageCommand()
 
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
