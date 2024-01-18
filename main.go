@@ -34,12 +34,6 @@ func main() {
 		return
 	}
 
-	err = session.UpdateGameStatus(0, "ping pong")
-	if err != nil {
-		log.Println("Error setting game status: ", err)
-		return
-	}
-
 	log.Println("Bot is now running. Press CTRL-C to exit.")
 
 	defer func(session *discordgo.Session) {
@@ -53,6 +47,7 @@ func main() {
 	}(session)
 
 	testCommand()
+	setStatus()
 
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)

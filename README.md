@@ -12,9 +12,18 @@
 
 The discord bot uses the following environment variables:
 
-| Variable Name | Description                      |
-|---------------|----------------------------------|
-| `token` | The discord authentication token |
+| Variable Name | Description                        |
+|---------------|------------------------------------|
+| `token` | The discord authentication token   |
+| `statusType` | The type of the discord bot status. See [Status Types](#status-types) |
+| `statusContent` | The content of the status          |
+| `streamingURL` | The URL of the stream when the status type is `STREAMING` |
+
+### Status Types
+- `PLAYING`
+- `STREAMING` (requires environment variable `streamingURL`)
+- `LISTENING`
+- `WATCHING`
 
 ## Todo
 - [ ] soon
